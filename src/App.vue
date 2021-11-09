@@ -3,10 +3,12 @@
 
   </div>
   <router-view class="view"/>
+
 </template>
 <style lang="scss">
 
 #app {
+  font-size: 12px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,12 +17,16 @@
   height: 100vh;
   font-size: 12px;
 }
-.uk-button-green{
-  background: #188c72;
+.uk-button-purple{
+  background: #2a307c;
+  color: #fff;
+}
+.uk-button-orange{
+  background: #bf6121;
   color: #fff;
 }
 .view{
-  height: 85vh;
+  height: 95vh;
 }
 html body{
   height: 100vh;

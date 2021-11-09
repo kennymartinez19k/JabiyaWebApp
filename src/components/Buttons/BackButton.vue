@@ -1,9 +1,6 @@
 <template>
-    <button
-        class="uk-button uk-button-secondary uk-margin-top"
-        @click="goBack()">
-        <span uk-icon="icon: reply"></span><strong></strong>
-    </button>
+    <span @click="goBack()" uk-icon="icon: reply"></span><strong></strong>
+    <!-- <font-awesome-icon icon="arrow-left" /> -->
 </template>
 
 <script>
@@ -16,3 +13,12 @@ export default {
   }
 }
 </script>
+<style scoped>
+span{
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  transform: scale(1.2);
+  z-index: 1;
+}
+</style>
