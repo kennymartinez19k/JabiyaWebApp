@@ -5,12 +5,16 @@ import router from './router'
 import store from './store'
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
-import { library } from '@fortawesome/fontawesome-svg-core' // temperature-frigid
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core' 
+import { fas, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+library.add(fas, faYoutube)
 
 library.add(faPhone)
+library.add(faArrowLeft)
 library.add(faTwitter)
 
 
