@@ -1,13 +1,14 @@
 <template>
   <div class="login">
-    <div class="logo-cont">
-    <img class="logo" src="../assets/jabilla3.png" alt="">
-    <h5 class="title-logo">Javiya</h5>
+    <div class=" logo-cont " style=" min-width: 400px">
+
+    <!-- <img class="logo" src="../assets/jabilla3.png" alt=""> -->
+    <!-- <h5 class="title-logo">Javiya</h5> -->
   </div>  
-    <h4 class="uk-flex-inline uk-text-light uk-margin-remove"><a class="uk-link-heading" @click="login('signIn')">Inicia Sección</a></h4> |
-    <h4 class="uk-flex-inline uk-text-light uk-margin-remove"><a class="uk-link-heading" @click="login('signUp')">Registrarse</a></h4>
+    <!-- <h4 class="uk-flex-inline uk-text-light uk-margin-remove"><a class="uk-link-heading" @click="login('signIn')">Inicia Sección</a></h4> |-->
+    <h4 class="uk-flex-inline uk-text-light uk-margin-remove"><a class="uk-link-heading" @click="login('signUp')">Registrarse</a></h4> 
     <sign-in v-if="signIn"/>
-    <sign-up v-else/>
+    <sign-up v-else class=" uk-padding-remove"/>
    </div>
 </template>
 
@@ -20,7 +21,7 @@ export default {
       SignIn,
       SignUp
     },
-    data() {
+    data() { 
         return {
             signIn: true,
             singUp: false

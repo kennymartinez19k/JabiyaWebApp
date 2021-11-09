@@ -10,14 +10,20 @@
             <div class="uk-margin">
                 <label class="terms uk-text-light"><input style="margin-right: 5px" class="uk-checkbox" type="checkbox" checked>Guardar contraseña</label>
             </div>
-            <button class="uk-button uk-button-green">Enviar</button>
+            <button class="uk-button uk-button-green" @click="go">Enviar</button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+ 
+ methods: {
+     go () {
+      this.$router.push({ name: 'HomeLoadCalendar'}).catch(() => {})
 
+     }
+ }
 }
 </script>
 
