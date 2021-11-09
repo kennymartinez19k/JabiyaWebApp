@@ -8,14 +8,20 @@
             <div class="uk-margin">
                 <input class="uk-input uk-form-width-medium" type="text" placeholder="Contraseña">
             </div>
-            <button class="uk-button uk-button-primary">Enviar</button>
+            <button class="uk-button uk-button-primary" @click="go">Enviar</button>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+ 
+ methods: {
+     go () {
+      this.$router.push({ name: 'HomeLoadCalendar'}).catch(() => {})
 
+     }
+ }
 }
 </script>
 

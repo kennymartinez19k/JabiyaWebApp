@@ -16,7 +16,7 @@ export default {
       SignIn,
       SignUp
     },
-    data() {
+    data() { 
         return {
             signIn: true,
             singUp: false

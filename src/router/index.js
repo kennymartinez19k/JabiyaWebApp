@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import HomeLoadCalendar from '../views/HomeLoadCalendar.vue'
 import Login from '../views/Login.vue';
 
 const routes = [
@@ -9,9 +9,9 @@ const routes = [
     component: Login
   },
   {
-    path: '/home',
-    name: 'home',
-    component: Home
+    path: '/home-load-calendar',
+    name: 'HomeLoadCalendar',
+    component: HomeLoadCalendar
   },
   {
     path: '/about',
