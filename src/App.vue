@@ -3,10 +3,6 @@
 
   </div>
   <router-view class="view"/>
-  <div class="footer">
-
-  </div>
-  
 </template>
 <style lang="scss">
 
@@ -17,6 +13,7 @@
   text-align: center;
   color: #2c3e50;
   height: 100vh;
+  font-size: 12px;
 }
 .uk-button-green{
   background: #188c72;
@@ -31,13 +28,7 @@ html body{
   margin: 0;
 
 }
-.footer{
-  padding: 30px;
-  background: #188c72;
-  position: relative;
-  bottom: 0px;
 
-}
 #nav {
   padding: 10px;
  
