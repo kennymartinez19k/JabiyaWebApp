@@ -3,27 +3,30 @@
 
   </div>
   <router-view class="view"/>
-  <div class="footer">
 
-  </div>
-  
 </template>
 <style lang="scss">
 
 #app {
+  font-size: 12px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   height: 100vh;
+  font-size: 12px;
 }
-.uk-button-green{
-  background: #188c72;
+.uk-button-purple{
+  background: #2a307c;
+  color: #fff;
+}
+.uk-button-orange{
+  background: #bf6121;
   color: #fff;
 }
 .view{
-  height: 85vh;
+  height: 95vh;
 }
 html body{
   height: 100vh;
@@ -31,13 +34,7 @@ html body{
   margin: 0;
 
 }
-.footer{
-  padding: 30px;
-  background: #188c72;
-  position: relative;
-  bottom: 0px;
 
-}
 #nav {
   padding: 10px;
  

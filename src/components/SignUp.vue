@@ -1,45 +1,68 @@
 <template>
-    <div class="uk-flex uk-flex-center container" >
-        <div class="uk-card uk-card-default uk-padding-remove uk-card-large uk-card-body uk-width-1-3@s" style="padding: 40px 20px !important; min-width: 400px">
+    <BackButton/>
+
+            <div class="uk-card uk-card-default uk-padding-remove uk-card-large uk-card-body uk-width-1-3@s"  style="padding: 0px 20px !important;">
+               <h4 class="uk-text-light uk-padding-remove">Crea una cuenta</h4>
+              <p class="uk-text-muted">si ya estas registrado, regresa a la pantalla anterio  y uso el boton de iniciar sesion</p>
             <div class="uk-margin">
-                <input class="uk-input uk-form-width-medium" type="text" style="width: 80%" placeholder="Nombre">
+                <input class="uk-input uk-form-width-medium" type="text" style="width: 100%" placeholder="Primer Nombre">
             </div>
             <div class="uk-margin">
-                <input class="uk-input uk-form-width-medium" type="email" style="width: 80%" placeholder="Email">
+                <input class="uk-input uk-form-width-medium" type="text" style="width: 100%" placeholder="Primer Apellido">
             </div>
             <div class="uk-margin">
-                <input class="uk-input uk-form-width-medium" type="password" style="width: 80%" placeholder="Contraseña">
+                <input class="uk-input uk-form-width-medium" type="email" style="width: 100%" placeholder="Correo Electronico">
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input uk-form-width-medium" type="password" style="width: 100%" placeholder="Contraseña">
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input uk-form-width-medium" type="text" style="width: 100%" placeholder="Numero Telefono">
+            </div>
+            <div class="uk-margin">
+                <input class="uk-input uk-form-width-medium" type="text" style="width: 100%" placeholder="Cual es su Compañia">
             </div>
             <div class="uk-margin">
                 <label class="terms uk-text-light"><input style="margin-right: 5px" class="uk-checkbox" type="checkbox" checked>Aceptar terminos y condiciones</label>
             </div>
             
-            <button class="uk-button uk-button-green uk-text-white">Enviar</button>
+            <button class="uk-button uk-width-1-1 uk-button-purple uk-text-white" @click="go">Registrarse</button>
         </div>
-    </div>
 </template>
 
 <script>
-export default {
+import BackButton from '../components/Buttons/BackButton.vue'
 
+export default {
+components: {
+    BackButton,
+  },
+  methods: {
+    go(){
+        this.$router.push({ name: 'HomeLoadCalendar' }).catch(() => {})
+    }  
+  },
 }
+
 </script>
 
 <style scoped>
 @media screen and (max-width: 639px){
 .container{
-    height: 70vh;
+    height: 55vh;
 }
 .uk-card-body{
     min-width: 100px !important;
+}
 
+.uk-card-body{
+    min-width: 100px !important;
+    box-shadow: 0px 0px 0px #000 !important;
 }
 }
 .terms{
-    width: 78%;
     display: block;
     text-align: initial;
-    margin: 0px auto;
+    margin: 10px 0px 5px 3px
 }
-
 </style>
