@@ -16,8 +16,8 @@ export default {
 <style scoped>
 span{
   position: absolute;
-  top: 20px;
-  left: 22px;
+  top: 21px;
+  left: 23px;
   transform: scale(1.2);
   z-index: 1;
 }
