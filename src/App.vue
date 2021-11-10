@@ -1,7 +1,4 @@
 <template>
-  <div id="nav">
-
-  </div>
   <router-view class="view"/>
 
 </template>
@@ -48,5 +45,4 @@ html body{
     }
   }
 }
-
 </style>

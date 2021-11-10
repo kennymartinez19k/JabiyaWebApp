@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BackButton/>
+      <app-header/>
        <div class="uk-background-muted  uk-panel uk-flex uk-flex-around">
               <div class="uk-padding-small">
             <p class="uk-text-middle">Tiempo</p>
@@ -13,13 +13,11 @@
 </template>
 
 <script>
-import BackButton from '../components/Buttons/BackButton.vue'
-
+import AppHeader from '../views/AppHeader.vue'
 export default {
-  components: {
-    BackButton,
-  }
-
+components:{
+  AppHeader
+}
 }
 </script>
 

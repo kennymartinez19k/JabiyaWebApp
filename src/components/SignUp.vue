@@ -51,7 +51,7 @@ components: {
   },
   methods: {
     go(){
-        this.$router.push({ name: 'HomeLoadCalendar' }).catch(() => {})
+        this.$router.push({ name: 'home' }).catch(() => {})
     }  
   },
 }
