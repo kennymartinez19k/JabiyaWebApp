@@ -1,7 +1,7 @@
 <template>
         <BackButton/>
     <div class="uk-flex uk-flex-center uk-flex-wrap container">
-        <div class="uk-card uk-card-default uk-padding-remove uk-card-large uk-card-body uk-width-1-3@s" style="padding: 40px 20px !important; min-width: 400px">
+        <form class="uk-card uk-card-default uk-padding-remove uk-card-large uk-card-body uk-width-1-3@s" style="padding: 40px 20px !important; min-width: 400px">
             <img class="logo" src="../assets/logo.png" alt="">
             <h4 class="uk-text-light">Entrar a su cuenta</h4>
             <span class="uk-text-muted" style="margin-bottom: 30px; display: block">ingrese su correo electronico y contraseña y presione iniciar seción para ingresar a su cuenta</span>
@@ -18,7 +18,7 @@
             </div>
             <button class="uk-button uk-button-purple uk-width-1-1 uk-margin-small-bottom" style="margin-top: 15px">Iniciar sesión</button>
             <span style="display: block; margin-top: 10px">Aun No tiene cuenta? <a @click="changeRoute()">Registrese</a></span>
-        </div>
+        </form>
     </div>
 </template>
 

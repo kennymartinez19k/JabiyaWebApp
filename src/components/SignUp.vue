@@ -1,6 +1,6 @@
 <template>
     <BackButton/>
-            <div class="uk-card uk-card-default uk-padding-remove uk-card-large uk-card-body uk-width-1-3@s"  style="padding: 40px 20px !important;">
+            <form class="uk-card uk-card-default uk-padding-remove uk-card-large uk-card-body uk-width-1-3@s"  style="padding: 40px 20px !important;">
                <h4 class="uk-text-light uk-padding-remove">Crea una cuenta</h4>
               <p class="uk-text-muted">si ya estas registrado, regresa a la pantalla anterio  y uso el boton de iniciar sesion</p>
             <div class="uk-margin">
@@ -26,7 +26,7 @@
             </div>
             
             <button class="uk-button uk-width-1-1 uk-button-purple uk-text-white" style="margin-top: 15px" @click="go">Registrarse</button>
-        </div>
+        </form>
 </template>
 
 <script>
