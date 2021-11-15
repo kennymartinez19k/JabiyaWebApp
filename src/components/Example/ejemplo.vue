@@ -9,6 +9,9 @@
 <script>
 export default {
 
+
+//          const measurementUnits = await this.$services.measurementUnitService.getAll()
+//          console.log(measurementUnits, 'this.measurementUnits')
 }
 </script>
 
