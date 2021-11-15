@@ -5,6 +5,7 @@ import './registerServiceWorker'
 import router from './router'
 import storeModule from './store'
 import UIkit from 'uikit';
+import servicesPlugins from './plugins'
 import Icons from 'uikit/dist/js/uikit-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core' 
@@ -30,5 +31,6 @@ const store = createStore({ ...storeModule })
 createApp(App)
 .component('font-awesome-icon', FontAwesomeIcon)
 .use(store)
+.use(servicesPlugins)
 .use(router)
 .mount('#app')

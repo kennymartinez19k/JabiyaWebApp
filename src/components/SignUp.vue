@@ -24,14 +24,12 @@
             <div class="uk-margin">
                 <label class="terms uk-text-light"><input v-model="signUpLogin.terms" style="margin-right: 5px" class="uk-checkbox" type="checkbox" checked>Aceptar terminos y condiciones</label>
             </div>
-            
-            <button class="uk-button uk-width-1-1 uk-button-purple uk-text-white" style="margin-top: 15px" @click="go">Registrarse</button>
-        </form>
+            <button class="uk-button uk-width-1-1 uk-button-purple uk-text-white" @click="getAll">Registrarse</button>
+            </form>
 </template>
 
 <script>
 import BackButton from '../components/Buttons/BackButton.vue'
-
 export default {
 components: {
     BackButton,
@@ -55,8 +53,13 @@ components: {
   methods: {
     go(){
         this.$router.push({ name: 'home' }).catch(() => {})
+    },
+    async getAll (){
+   
+        this.$router.push({ name: 'HomeLoadCalendar' }).catch(() => {})
+
     }  
-  },
+}
 }
 
 </script>
