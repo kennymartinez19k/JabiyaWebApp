@@ -1,47 +1,65 @@
 <template>
     <BackButton/>
-
-            <div class="uk-card uk-card-default uk-padding-remove uk-card-large uk-card-body uk-width-1-3@s"  style="padding: 0px 20px !important;">
+            <form class="uk-card uk-card-default uk-padding-remove uk-card-large uk-card-body uk-width-1-3@s"  style="padding: 40px 20px !important;">
                <h4 class="uk-text-light uk-padding-remove">Crea una cuenta</h4>
               <p class="uk-text-muted">si ya estas registrado, regresa a la pantalla anterio  y uso el boton de iniciar sesion</p>
             <div class="uk-margin">
-                <input class="uk-input uk-form-width-medium" type="text" style="width: 100%" placeholder="Primer Nombre">
+                <input class="uk-input uk-form-width-medium" v-model="signUpLogin.firstName" type="text" style="width: 100%" placeholder="Primer Nombre">
             </div>
             <div class="uk-margin">
-                <input class="uk-input uk-form-width-medium" type="text" style="width: 100%" placeholder="Primer Apellido">
+                <input class="uk-input uk-form-width-medium" v-model="signUpLogin.lastName" type="text" style="width: 100%" placeholder="Primer Apellido">
             </div>
             <div class="uk-margin">
-                <input class="uk-input uk-form-width-medium" type="email" style="width: 100%" placeholder="Correo Electronico">
+                <input class="uk-input uk-form-width-medium" v-model="signUpLogin.email" type="email" style="width: 100%" placeholder="Correo Electronico">
             </div>
             <div class="uk-margin">
-                <input class="uk-input uk-form-width-medium" type="password" style="width: 100%" placeholder="Contraseña">
+                <input class="uk-input uk-form-width-medium" v-model="signUpLogin.password" type="password" style="width: 100%" placeholder="Contraseña">
             </div>
             <div class="uk-margin">
-                <input class="uk-input uk-form-width-medium" type="text" style="width: 100%" placeholder="Numero Telefono">
+                <input class="uk-input uk-form-width-medium" v-model="signUpLogin.phoneNumber" type="text" style="width: 100%" placeholder="Numero Telefono">
             </div>
             <div class="uk-margin">
-                <input class="uk-input uk-form-width-medium" type="text" style="width: 100%" placeholder="Cual es su Compañia">
+                <input class="uk-input uk-form-width-medium" v-model="signUpLogin.company" type="text" style="width: 100%" placeholder="Cual es su Compañia">
             </div>
             <div class="uk-margin">
-                <label class="terms uk-text-light"><input style="margin-right: 5px" class="uk-checkbox" type="checkbox" checked>Aceptar terminos y condiciones</label>
+                <label class="terms uk-text-light"><input v-model="signUpLogin.terms" style="margin-right: 5px" class="uk-checkbox" type="checkbox" checked>Aceptar terminos y condiciones</label>
             </div>
-            
-            <button class="uk-button uk-width-1-1 uk-button-purple uk-text-white" @click="go">Registrarse</button>
-        </div>
+            <button class="uk-button uk-width-1-1 uk-button-purple uk-text-white" @click="getAll">Registrarse</button>
+            </form>
 </template>
 
 <script>
 import BackButton from '../components/Buttons/BackButton.vue'
-
 export default {
 components: {
     BackButton,
   },
+  mounted(){
+        this.$store.commit('setCurrent', false)
+    },
+  data() {
+      return {
+          signUpLogin:{
+              firstName: '',
+              lastName: '',
+              email: '',
+              password: '',
+              phoneNumber: null,
+              company: '',
+              terms: false
+          }
+      }
+  },
   methods: {
     go(){
+        this.$router.push({ name: 'home' }).catch(() => {})
+    },
+    async getAll (){
+   
         this.$router.push({ name: 'HomeLoadCalendar' }).catch(() => {})
+
     }  
-  },
+}
 }
 
 </script>

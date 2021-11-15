@@ -1,12 +1,21 @@
-import { createStore } from 'vuex'
+import currentPage from '../store/currentPage'
 
-export default createStore({
-  state: {
-  },
+const storeModule = {
+  state: () => (
+    {
+      ...currentPage.state,
+    }
+  ),
   mutations: {
+    ...currentPage.mutations,
   },
   actions: {
+    ...currentPage.actions
   },
-  modules: {
+  getters: {
+    ...currentPage.getters,
   }
-})
+}
+
+export default storeModule
+
