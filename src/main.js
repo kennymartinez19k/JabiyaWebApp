@@ -4,6 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import UIkit from 'uikit';
+import servicesPlugins from './plugins'
 import Icons from 'uikit/dist/js/uikit-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core' 
@@ -28,5 +29,6 @@ UIkit.use(Icons);
 createApp(App)
 .component('font-awesome-icon', FontAwesomeIcon)
 .use(store)
+.use(servicesPlugins)
 .use(router)
 .mount('#app')

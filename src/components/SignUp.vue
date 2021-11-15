@@ -26,7 +26,7 @@
                 <label class="terms uk-text-light"><input style="margin-right: 5px" class="uk-checkbox" type="checkbox" checked>Aceptar terminos y condiciones</label>
             </div>
             
-            <button class="uk-button uk-width-1-1 uk-button-purple uk-text-white" @click="go">Registrarse</button>
+            <button class="uk-button uk-width-1-1 uk-button-purple uk-text-white" @click="getAll">Registrarse</button>
         </div>
 </template>
 
@@ -37,9 +37,12 @@ export default {
 components: {
     BackButton,
   },
+
   methods: {
-    go(){
+    async getAll (){
+   
         this.$router.push({ name: 'HomeLoadCalendar' }).catch(() => {})
+
     }  
   },
 }
