@@ -36,6 +36,9 @@ export default {
 components: {
     BackButton,
   },
+  mounted(){
+        this.$store.commit('setCurrent', false)
+    },
   data() {
       return {
           signUpLogin:{

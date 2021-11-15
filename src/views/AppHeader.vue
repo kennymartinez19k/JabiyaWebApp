@@ -1,8 +1,8 @@
 <template>
-  <nav class="uk-navbar uk-navbar-container uk-margin">
+  <nav class="uk-navbar uk-navbar-container">
     <div class="uk-navbar-left">
-        <a class="uk-navbar-toggle" style="min-height: 60px !important" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-overlay" href="#"></a>
-        <h4 class="uk-margin-remove">{{this.current}}</h4>
+        <a class="uk-navbar-toggle" style="min-height: 60px !important" uk-navbar-toggle-icon  @click="openMenu" href="#"></a>
+        <h4 class="uk-margin-remove">{{this.titlePage.menuName}}</h4>
 <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
     <div class="uk-offcanvas-bar uk-padding-remove">
 
@@ -12,12 +12,11 @@
             <h6 class="uk-tect-light uk-margin-remove">Chofer11@gmail.com</h6>
         </div>
         <ul class="uk-list nav-opt uk-list-divider">
-            <li @click="currentPage('board')" >Tablero</li>
-            <li @click="currentPage('load')">Cargar / Descargar vehiculo</li>
-            <li @click="currentPage('deliveryOrders')">Entrega de Ordenes</li>
-            <li @click="currentPage('language')">Seleccione un idioma</li>
-            <li @click="currentPage('signOut')">Cerrar sesión</li>
-            <li @click="currentPage('version')">Version app</li>
+            <li @click="setCurrentPage({menuName: 'Carga de ordenes',componentName: 'home'})">Cargar / Descargar vehiculo</li>
+            <li @click="setCurrentPage({menuName: 'Lista de ordenes',componentName: 'orders'})">Entrega de Ordenes</li>
+            <li @click="setCurrentPage({menuName: 'En proceso',componentName: 'about'})">Seleccione un idioma</li>
+            <li @click="setCurrentPage({menuName: 'En proceso',componentName: 'about'})">Cerrar sesión</li>
+            <li @click="setCurrentPage({menuName: 'En proceso',componentName: 'about'})">Version app</li>
         </ul>
     </div>
 </div>
@@ -27,38 +26,30 @@
 
 <script>
 import Uikit from 'uikit'
+import {mapGetters} from 'vuex'
 export default {
+computed:{
+    ...mapGetters([
+        "current"
+    ]),
+    titlePage(){
+        return this.current
+    }
+},
 data() {
     return {
-        current: 'Tablero'
+
     }
 },
 methods:{
-    currentPage(val) {
-        switch (val) {
-            case 'board':
-                this.current = 'Tablero'
-                break;
-            case 'load':
-                this.current = 'Cargar / Descargar vehiculo'
-                break;
-            case 'deliveryOrders':
-                this.current = 'Entrega de Ordenes'
-                break;
-            case 'language':
-                this.current = 'Seleccione un idioma'
-                break;
-            case 'signOut':
-                this.current = 'Cerrar sesión'
-                break;
-            case 'version':
-                this.current = 'Version app'
-                break;
-            default:
-                break;
-        }
+    openMenu(){
+      Uikit.offcanvas('#offcanvas-overlay').show();  
+    },
+    setCurrentPage(val) {
+        this.$store.commit('setCurrent', val)
+        this.$router.push({ name: val.componentName }).catch(() => {})
         Uikit.offcanvas('#offcanvas-overlay').hide();
-    }
+    },
 }
 }
 </script>

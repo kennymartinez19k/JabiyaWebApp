@@ -1,8 +1,9 @@
 import { createApp } from 'vue'
+import { createStore } from 'vuex'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
-import store from './store'
+import storeModule from './store'
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -23,6 +24,7 @@ library.add(faTwitter)
 // loads the Icon plugin
 UIkit.use(Icons);
 
+const store = createStore({ ...storeModule })
 // components can be called from the imported UIkit reference
 
 createApp(App)

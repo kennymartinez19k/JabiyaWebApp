@@ -1,6 +1,5 @@
 <template>
   <div>
-   <app-header/>
        <div class="uk-background-muted  uk-panel uk-flex uk-flex-around sticky">
               <div class="uk-padding-small">
             <p class="uk-text-middle">Tiempo</p>
@@ -24,11 +23,10 @@
 </template>
 
 <script>
-import AppHeader from '../views/AppHeader.vue'
 export default {
-  components: {
-    AppHeader,
-  },
+  mounted(){
+        this.$store.commit('setCurrent', {menuName: 'Carga de ordenes',componentName: 'home'},)
+    },
   data () {
     return {
       loads: [

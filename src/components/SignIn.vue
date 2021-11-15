@@ -40,6 +40,9 @@ data() {
     }
 },
 methods:{
+    mounted(){
+        this.$store.commit('setCurrent', false)
+    },
     changeRoute(path){
         if (path == 'home') {
            if(this.signInLogin.email !== '' && this.signInLogin.password !== '' ) 

@@ -11,6 +11,9 @@
 <script>
 
 export default {
+    mounted(){
+        this.$store.commit('setCurrent', false)
+    },
     methods:{
         changeRoute (path) {
             this.$router.push({ name: path }).catch(() => {})
