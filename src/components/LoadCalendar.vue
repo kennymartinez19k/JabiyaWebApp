@@ -72,9 +72,9 @@
 import BackButton from '../components/Buttons/BackButton.vue'
 import moment from 'moment'
 export default {
-  components: {
-    BackButton,
-  },
+  mounted(){
+        this.$store.commit('setCurrent', {menuName: 'Carga de ordenes',componentName: 'home'},)
+    },
   data () {
     return {
       newDate: null,

@@ -1,10 +1,23 @@
 <template>
-  <div id="nav">
-
-  </div>
-  <router-view class="view"/>
+  <app-header v-if="current"/>
+  <router-view class="view-header" :class="{view: current}"/>
 
 </template>
+<script>
+import AppHeader from './views/AppHeader.vue'
+import { mapGetters } from 'vuex'
+
+export default {
+  components:{
+    AppHeader
+  },
+  computed:{
+    ...mapGetters([
+        'current'
+    ])
+},
+}
+</script>
 <style lang="scss">
 
 #app {
@@ -26,7 +39,10 @@
   color: #fff;
 }
 .view{
-  height: 95vh;
+  height: 89vh !important;
+}
+.view-header{
+  height: 98vh;
 }
 html body{
   height: 100vh;
@@ -48,5 +64,4 @@ html body{
     }
   }
 }
-
 </style>
